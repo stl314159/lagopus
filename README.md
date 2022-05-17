@@ -1,7 +1,3 @@
-<p align="center">
-<img src="https://github.com/qlyoung/lagopus/blob/master/etc/lagopus.svg" alt="The project logo; a stylized Arctic fox head" width="20%"/>
-</p>
-
 ## Usage
 
 [Helm](https://helm.sh) must be installed to use the charts.  Please refer to
