@@ -19,4 +19,13 @@ entries:
     urls:
     - https://github.com/stl314159/lagopus/releases/download/lagopus-0.1.2/lagopus-0.1.2.tgz
     version: 0.1.2
-generated: "2022-05-18T02:04:43.336535679Z"
+  - apiVersion: v1
+    appVersion: 0.0.1
+    created: "2022-05-18T02:25:16.752103303Z"
+    description: Distributed fuzzing platform
+    digest: c8fd5abb18928ad57df2189a0a4903790548e80abb83fdb7d2b51af0bb1d59cb
+    name: lagopus
+    urls:
+    - https://github.com/stl314159/lagopus/releases/download/lagopus-0.0.1/lagopus-0.0.1.tgz
+    version: 0.0.1
+generated: "2022-05-18T02:25:16.752115601Z"
