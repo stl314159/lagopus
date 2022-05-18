@@ -3,7 +3,6 @@ kind: Service
 metadata:
   name: lagopus-server
 spec:
-  type: LoadBalancer
   ports:
   - name: http
     protocol: TCP
