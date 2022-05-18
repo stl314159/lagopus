@@ -3,7 +3,7 @@ kind: PersistentVolumeClaim
 metadata:    
  name: lagopus-pvc
 spec:    
- storageClassName: manual    
+ storageClassName: default    
  accessModes:    
    - ReadWriteMany
  resources:    
