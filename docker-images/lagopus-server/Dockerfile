@@ -4,7 +4,7 @@ WORKDIR /build/
 COPY ./templates/package.json ./templates/
 RUN cd templates && npm install
 
-FROM qlyoung/meinheld-gunicorn
+FROM scott314/meinheld-gunicorn
 
 WORKDIR /app/
 COPY --from=0 /build/ ./

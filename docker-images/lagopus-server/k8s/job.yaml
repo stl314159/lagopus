@@ -17,7 +17,7 @@ spec:
           claimName: lagopus-pvc
       containers:
       - name: fuzzer
-        image: qlyoung/lagopus-fuzzer:latest
+        image: scott314/lagopus-fuzzer:latest
         imagePullPolicy: Always
         args: ["{{ cpu }}"]
         lifecycle:

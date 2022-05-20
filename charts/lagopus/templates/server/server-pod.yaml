@@ -7,7 +7,7 @@ metadata:
 spec:
   containers:
   - name: lagopus-server
-    image: qlyoung/lagopus-server
+    image: scott314/lagopus-server
     imagePullPolicy: Always
     ports:
     - containerPort: 80
@@ -15,13 +15,13 @@ spec:
       - name: nfsvol
         mountPath: "/lagopus"
   - name: lagopus-scanner
-    image: qlyoung/lagopus-scanner
+    image: scott314/lagopus-scanner
     volumeMounts:
       - name: nfsvol
         mountPath: /jobs
         subPath: jobs
   - name: lagopus-db
-    image: qlyoung/lagopus-db
+    image: scott314/lagopus-db
     ports:
     - containerPort: 3306
       name: mysql
