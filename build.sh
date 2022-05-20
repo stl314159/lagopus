@@ -6,8 +6,8 @@ function build_tag_push() {
   cd docker-images/$1
   SHA=$(docker build -q . | cut -d':' -f2)
   echo "Tagging fuzzer ($(pwd))"
-  docker tag $SHA qlyoung/$1:latest
-  docker push qlyoung/$1:latest
+  docker tag $SHA scott314/$1:latest
+  docker push scott314/$1:latest
   cd $WD
 }
 
