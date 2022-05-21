@@ -383,7 +383,7 @@ class LagopusJob(object):
         job_id = lagopus_job_id(job_name, driver, now)
 
         status = "Created"
-        create_timestamp = now.strftime("%Y-%m-%d %H-%M-%S")
+        create_timestamp = now.strftime("%Y:%m:%d %H:%M:%S")
 
         filename = secure_filename(job_id + ".zip")
         savepath = os.path.join(app.config["UPLOAD_FOLDER"], filename)
