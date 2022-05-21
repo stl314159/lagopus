@@ -131,3 +131,4 @@ dmypy.json
 # lagopus build
 lagopus.yaml
 kube-config
+example/fuzzgoat/.DS_Store

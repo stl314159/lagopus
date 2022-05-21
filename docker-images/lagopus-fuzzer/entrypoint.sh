@@ -117,7 +117,7 @@ fi
 touch started
 
 # Loop on pushing out stats
-FUZZERS_ALIVE=1
+FUZZERS_ALIVE=$(eval "$COUNTFUZZER_CMD")
 ELAPSED_TIME=$(($(date -u +%s) - STARTTIME))
 
 while [ "$FUZZERS_ALIVE" -ne "0" ] && [ ! -f /shouldexit ] && [ ! $ELAPSED_TIME -gt $FUZZER_TIMEOUT ]; do
