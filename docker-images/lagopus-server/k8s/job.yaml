@@ -50,6 +50,8 @@ spec:
           value: "lagopus"
         - name: INFLUXDB_MEASUREMENT
           value: "jobs"
+        - name: AFL_NO_AFFINITY
+          value: "1"
         volumeMounts:
           - name: nfsvol
             mountPath: /{{ jobid }}
