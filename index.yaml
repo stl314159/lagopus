@@ -21,6 +21,15 @@ entries:
     version: 0.1.2
   - apiVersion: v1
     appVersion: 0.1.0
+    created: "2022-05-21T13:05:44.273215185Z"
+    description: Distributed fuzzing platform
+    digest: 42dec8d965e70e948fd40a129a48656f3b5c3e1559bb8eec92298a3c5b5401e0
+    name: lagopus
+    urls:
+    - https://github.com/stl314159/lagopus/releases/download/lagopus-0.0.7/lagopus-0.0.7.tgz
+    version: 0.0.7
+  - apiVersion: v1
+    appVersion: 0.1.0
     created: "2022-05-21T03:17:24.701965545Z"
     description: Distributed fuzzing platform
     digest: b64545b42b18700245f128d5b77be467741ce5fe8490e129b835f2e66bfb9781
@@ -73,4 +82,4 @@ entries:
     urls:
     - https://github.com/stl314159/lagopus/releases/download/lagopus-0.0.1/lagopus-0.0.1.tgz
     version: 0.0.1
-generated: "2022-05-21T03:17:24.702039051Z"
+generated: "2022-05-21T13:05:44.273502487Z"
