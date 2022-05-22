@@ -84,6 +84,7 @@ if [ -f "$JOBCONFIG" ]; then
   AFLMCC=$JOBCONFIG
 
   # Set appropriate architecture
+  rm /usr/local/bin/afl-qemu-trace
   ln -s /usr/local/bin/afl-qemu-trace-$ARCH /usr/local/bin/afl-qemu-trace
 else
   echo "$JOBCONFIG not found"
