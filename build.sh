@@ -11,6 +11,7 @@ function build_tag_push() {
   cd $WD
 }
 
+build_tag_push "fuzzbox"
 build_tag_push "lagopus-fuzzer"
 build_tag_push "lagopus-server"
 build_tag_push "lagopus-scanner"

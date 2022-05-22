@@ -71,12 +71,23 @@ else
   echo "provision.sh not found"
 fi
 
-TARGET="./target"
-CORPUS="./corpus"
-RESULT="./results"
-# afl-multicore config file should be placed at $JOBDATA/target.conf when using
-# AFL
-AFLMCC="./target.conf"
+JOBCONFIG="./fuzzjob.conf"
+echo "Looking for job configuration file..."
+if [ -f "$JOBCONFIG" ]; then
+  echo "Parsing job config"
+  ARCH=$(jq .arch $JOBCONFIG)
+  TARGET=$(jq .target $JOBCONFIG)
+  CORPUS=$(jq .input $JOBCONFIG)
+  RESULT=$(jq .output $JOBCONFIG)
+  # afl-multicore config file should be placed at $JOBDATA/fuzzjob.conf when using
+  # AFL
+  AFLMCC=$JOBCONFIG
+
+  # Set appropriate architecture
+  ln -s /usr/local/bin/afl-qemu-trace-$ARCH /usr/local/bin/afl-qemu-trace
+else
+  echo "$JOBCONFIG not found"
+fi
 
 mkdir -p $RESULT
 
@@ -106,7 +117,7 @@ if [ "$DRIVER" == "afl" ]; then
   afl-multicore -s 1 -v -c $AFLMCC start $CORES
   COUNTFUZZER_CMD="pgrep -c afl-fuzz"
 elif [ "$DRIVER" == "libFuzzer" ]; then
-  ./target -max_total_time=$FUZZER_TIMEOUT -rss_limit_mb=0 -jobs=$CORES -workers=$CORES $CORPUS &
+  $TARGET -max_total_time=$FUZZER_TIMEOUT -rss_limit_mb=0 -jobs=$CORES -workers=$CORES $CORPUS &
   COUNTFUZZER_CMD="pgrep -fc rss_limit_mb"
 else
   printf "Fuzzing driver '%s' unsupported; exiting\n" "$DRIVER"
